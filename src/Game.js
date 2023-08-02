@@ -49,7 +49,9 @@ class Game extends Component {
 
     this.setState((st) => ({
       scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
+      //reset the game, the dice back to normal
       rollsLeft: NUM_ROLLS,
+      //unlock all the dice
       locked: Array(NUM_DICE).fill(false),
     }));
     this.roll();
